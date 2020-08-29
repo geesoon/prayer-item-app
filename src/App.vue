@@ -1,56 +1,31 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-lg bg-light" id="navibar">
-      <h3 class="mx-3">
-        <strong>Prayer Item App</strong>
-      </h3>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">KGC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">BTGC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">JBGC</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="main">
+    <Header></Header>
+
+    <section class="mt-3">
       <transition name="slide" mode="out-in">
         <router-view></router-view>
       </transition>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
-// import sidebar from "./components/sidebar";
+import Header from "./components/header";
 
 export default {
-  data() {
-    return {};
-  },
   components: {
-    // sidebar,
+    Header,
   },
 };
 </script>
 
 <style>
+body {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1584098115468-0f5307581d31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+}
+
 #navibar {
   color: black;
   font-weight: bold;

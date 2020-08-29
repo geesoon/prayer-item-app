@@ -82,8 +82,8 @@
 <script>
 import prayerItem from "./prayerItem";
 import addPrayerItem from "./addPrayerItem";
-import toPray from "../data/toPray.json";
-import donePray from "../data/donePray.json";
+// import toPray from "../data/toPray.json";
+// import donePray from "../data/donePray.json";
 
 export default {
   data() {
@@ -92,8 +92,8 @@ export default {
         title: "",
         description: "",
       },
-      praying: toPray.toPray,
-      prayed: donePray.donePray,
+      praying: [],
+      prayed: [],
       addItemMode: false,
       showPrayerSection: true,
     };

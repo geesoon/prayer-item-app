@@ -1,24 +1,22 @@
 <template>
   <div class="col">
     <div class="row">
-      <button v-show="!finishAddMode" class="btn btn-light mr-2" @click="submitForm">Done</button>
+      <button v-show="!finishAddMode" class="btn btn-secondary mr-2" @click="submitForm">Done</button>
       <button v-show="!finishAddMode" class="btn btn-dark" @click="cancel">Cancel</button>
     </div>
 
-    <div class="row">
+    <div>
       <input
         type="text"
         placeholder="Prayer title"
         class="form-control text-left font my-2"
         v-model="form.title"
-        style="width: 80%;"
       />
       <input
         type="text"
         placeholder="Prayer description"
         class="form-control text-left font my-2"
         v-model="form.description"
-        style="width: 80%;"
       />
     </div>
   </div>

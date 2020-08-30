@@ -1,30 +1,35 @@
 <template>
   <div class="container">
-    <Header></Header>
-
-    <section class="mt-3">
-      <transition name="slide" mode="out-in">
-        <router-view></router-view>
-      </transition>
-    </section>
+    <div class="animate__animated animate__fadeInDown">
+      <Header></Header>
+    </div>
+    <div class="mt-3 animate__animated animate__fadeInUp">
+      <router-view></router-view>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 export default {
   components: {
     Header,
+    Footer,
   },
 };
 </script>
 
 <style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("https://images.unsplash.com/photo-1584098115468-0f5307581d31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  margin-bottom: 50px; /* Margin bottom by footer height */
 }
 
 #navibar {
@@ -32,35 +37,5 @@ body {
   font-weight: bold;
   font-size: 15px;
   font-family: Aclonica;
-}
-/* Transition */
-.slide-enter-active {
-  animation: slide-in 500ms ease-out forwards;
-}
-
-.slide-leave-active {
-  animation: slide-out 500ms ease-out forwards;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateY(-30px);
-    opcaity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
 }
 </style>
